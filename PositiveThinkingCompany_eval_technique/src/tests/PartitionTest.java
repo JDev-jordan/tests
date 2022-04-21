@@ -5,7 +5,7 @@ import java.util.List;
 
 
 import junit.framework.TestCase;
-import main.Partition;
+import services.Partition;
 
 public class PartitionTest extends TestCase{
 
