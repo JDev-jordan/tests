@@ -42,3 +42,17 @@ partition([1,2,3,4,5], 1) retourne: [ [1], [2], [3], [4], [5] ]
 	- testPpartitionShouldReturnEmptyListWhenTailleNull : qui teste si la fonction retourne bien une liste vide lorsque la taille passée en parametre est null ( taille == 0)
 	- testPpartitionShouldReturnEmptyListWhenListEmpty : qui teste si la fonction retourne bien une liste vide lorsque la liste passée en parametre est nulle ou vide ( list == null || list.isEmpty())
 	- testPartitionShouldReturnList : qui teste si la fonction retourne bien une liste contenant des listes qui elles contiennent des elements ( teste pour toutes ces sous listes, si leur taille est inferieure ou egale à la taille en souhaitée)
+	
+3- Optimisation
+
+> Nous allons rendre ici le code plus court en utilisant une methode prevue pour la subdivision des listes ( subList() )
+
+l'algorithme devient:
+
+	- Controle des paramettres : nous verifions ici que tous les parametre ne sont pas nulls et que la liste contient des éléments
+	- Nous initialisons des variables locales :
+		- listeFinale : qui correspond ici à l'ensemble des partitions (la liste à retourner)
+	- Nous faisons une boucle qui va de 0 à la * taille de la liste moins la taille en parametre * et qui s'incremente de + la taille en parametre.
+		- si (indice + la taille) est superieur à la taille de la list alors on ajoute le reste des elements de la liste a la listFinale
+		- si non on ajoute les elements de l'indice à l'indice + la taille en parametre dans la listFinale
+	- Nous retournons la listFinale
